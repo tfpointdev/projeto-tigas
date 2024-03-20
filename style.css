@@ -85,11 +85,16 @@ body * {
   left: 0;
   z-index: 1;
   transform: translatey(-50%);
+  animation: arrasta-fi 0.5s
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: arrasta-pai 0.5s forwards;
+  
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -177,5 +182,22 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes arrasta-pai {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes arrasta-fi {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
